@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "Svyaznoy Sans";
+  src: url("../fonts/SvyaznoySans/svyaznoysans.otf");
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "Svyaznoy Sans";
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+.container__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.container__logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid #E6E6E6;
+}
+.container__img {
+  margin: 12px auto;
+  height: 32px;
+}
+.container__search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(189, 199, 222, 0.23245);
+  padding: 16px 10px;
+}
+.container__main {
+  padding: 0 130px 60px 130px;
+}
+.container__title {
+  color: #333;
+  font-size: 32px;
+}
+.container__row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.container__footer {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+}
+@media screen and (max-width: 450px) {
+  .container__footer {
+    flex-direction: column;
+  }
+}
+.search {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+}
+.search__input {
+  height: 40px;
+  width: 612px;
+  border: 1px solid #D9D9D9;
+  padding: 7px;
+  display: flex;
+  flex-direction: row;
+}
+.search__text {
+  border: none;
+  width: calc(100% - 26px);
+}
+.search__text:focus {
+  outline: none;
+  border: none;
+}
+.search__text::placeholder {
+  color: black;
+  font-family: "Svyaznoy Sans";
+  font-size: 14px;
+}
+.search__filter {
+  width: 26px;
+  cursor: pointer;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFC800;
+  border: 1px solid #FFC800;
+  color: #4C1E87;
+  width: 152px;
+  height: 40px;
+  padding: 10px;
+  cursor: pointer;
+}
+@media screen and (max-width: 320px) {
+  .button_shrink {
+    width: 40px;
+  }
+}
+.button__text {
+  font-weight: 400;
+  font-size: 16px;
+}
+@media screen and (max-width: 320px) {
+  .button__text_hidden {
+    display: none;
+  }
+}
+.button__icon {
+  height: 25px;
+  display: none;
+}
+@media screen and (max-width: 320px) {
+  .button__icon_visible {
+    display: block;
+  }
+}
+.footer-text {
+  color: #EDEDED;
+  font-size: 16px;
+}
