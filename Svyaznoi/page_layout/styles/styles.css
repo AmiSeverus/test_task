@@ -12,8 +12,8 @@
 }
 .container {
   width: 100%;
-  min-height: 100vh;
-  height: 100%;
+  height: 100vh;
+  position: relative;
 }
 .container__header {
   display: flex;
@@ -41,32 +41,50 @@
   padding: 16px 10px;
 }
 .container__main {
-  padding: 0 130px 60px 130px;
+  padding: 0 130px;
+  margin-bottom: 60px;
 }
 .container__title {
+  margin-top: 23px;
   color: #333;
   font-size: 32px;
+}
+.container__subtitle {
+  font-size: 14px;
+  margin: 10px 0;
 }
 .container__row {
   width: 100%;
   display: flex;
   flex-direction: row;
 }
-.container__footer {
+.container__row_mb5 {
+  margin-bottom: 5px;
+}
+.container__row_mb10 {
+  margin-bottom: 10px;
+}
+.container__column {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.container__column_mb5 {
+  margin-bottom: 5px;
+}
+.container__column_mb10 {
+  margin-bottom: 10px;
+}
+.container__footer {
+  position: absolute;
   height: 60px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: black;
-  position: absolute;
   bottom: 0;
-}
-@media screen and (max-width: 450px) {
-  .container__footer {
-    flex-direction: column;
-  }
 }
 .search {
   width: 100%;
@@ -136,6 +154,137 @@
   .button__icon_visible {
     display: block;
   }
+}
+.filter-option {
+  background-color: #00CED0;
+  padding: 6px;
+  border-radius: 2px;
+  color: white;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.filter-option > img {
+  cursor: pointer;
+}
+.filter-option__text {
+  margin-right: 7px;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.card__image {
+  position: relative;
+}
+.card__image:before {
+  position: absolute;
+  font-size: 14px;
+  color: white;
+  padding: 4px 6px 4px 10px;
+  background-color: #FF0098;
+  left: 1px;
+  top: 10px;
+  z-index: 10;
+}
+.card__image_hot:before {
+  content: "Горячее предложение";
+  background-color: #FF0098;
+}
+.card__image_rec:before {
+  content: "Рекомендуем";
+  background-color: #4C1E87;
+}
+.card__like {
+  background-image: url(../icons/like.png);
+  position: absolute;
+  z-index: 10;
+  right: 10;
+  top: 12px;
+  cursor: pointer;
+  height: 21px;
+  width: 23px;
+}
+.card__like_liked {
+  background-image: url(../icons/liked.png);
+}
+.card__content {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #D9D9D9;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+.card__content:before {
+  content: url(../icons/tag.png);
+  position: absolute;
+  top: 0;
+  right: 19;
+  z-index: 5;
+}
+.card__content:after {
+  content: "9,6";
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  top: 10;
+  right: 28;
+  z-index: 10;
+}
+.card__row {
+  border-bottom: 1px solid #D9D9D9;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+.card__row_col {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card__row_nb {
+  border: none;
+}
+.card__star {
+  color: #E6E6E6;
+  font-size: 12px;
+  cursor: pointer;
+}
+.card__star_stared {
+  color: #00CED0;
+}
+.card__feed-back {
+  color: #4A4A4A;
+  font-size: 12px;
+}
+.card__subtext {
+  font-size: 12px;
+  color: #4A4A4A;
+}
+.card__subtext_ping {
+  color: #FF0098;
+}
+.card__subtext_aqua {
+  color: #00979F;
+}
+.card__subtext_violet {
+  color: #4C1E87;
+  cursor: pointer;
+}
+.card__subtext_violet > span {
+  border-bottom: 1px solid #4C1E87;
+}
+.card__subtext_striked {
+  color: #FF0098;
+  text-decoration: line-through;
+}
+.card__info_right {
+  text-align: right;
 }
 .footer-text {
   color: #EDEDED;

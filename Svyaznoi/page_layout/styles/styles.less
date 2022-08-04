@@ -9,7 +9,7 @@
 
 @c_ping: #FF0098;
 @c_blue: #00CED0;
-@c_auqa: #00979F;
+@c_aqua: #00979F;
 @c_violet: #4C1E87;
 @c_yellow: #FFC800;
 @c_grey: #4A4A4A;
@@ -23,11 +23,10 @@
     margin: 0;
     padding: 0;
 }
-
 .container {
     width:100%;
-    min-height: 100vh;
-    height: 100%;
+    height: 100vh;
+    position: relative;
     &__header {
         display: flex;
         flex-direction: column;
@@ -54,36 +53,54 @@
         padding: 16px 10px;
     }
     &__main {
-        padding: 0 130px 60px 130px;
+        padding: 0 130px;
+        margin-bottom: 60px;
     }
     &__title {
+        margin-top: 23px;
         color: #333;
         font-size: 32px;
     }
     &__subtitle {
-
+        font-size: 14px;
+        margin: 10px 0;
     }
     &__row {
         width: 100%;
         display: flex;
         flex-direction: row;
+        &_mb5 {
+            margin-bottom: 5px;
+        }
+        &_mb10 {
+            margin-bottom: 10px;
+        }
     }
-    &__footer {
+
+    &__column {
         width: 100%;
+        display: flex;
+        flex-direction: row;
+        &_mb5 {
+            margin-bottom: 5px;
+        }
+        &_mb10 {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__footer {
+        position: absolute;
         height: 60px;
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         background-color: black;
-        position: absolute;
         bottom: 0;
-        @media screen {
-            @media (max-width: 450px) {
-                flex-direction: column;
-            }
-        }
     }
+
 }
 
 .search {
@@ -163,9 +180,146 @@
     }
 }
 
+.filter-option {
+    background-color: @c_blue;
+    padding: 6px;
+    border-radius: 2px;
+    color: white;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    & > img {
+        cursor: pointer;
+    }
+
+    &__text {
+        margin-right: 7px;
+    }
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    &__image {
+        position: relative;
+        &:before {
+            position: absolute;
+            font-size: 14px;
+            color: white;
+            padding: 4px 6px 4px 10px;
+            background-color: @c_ping;
+            left: 1px;
+            top: 10px;
+            z-index: 10;
+        }
+
+        &_hot:before {
+            content: "Горячее предложение";
+            background-color: @c_ping;
+        }
+
+        &_rec:before{
+            content: "Рекомендуем";
+            background-color: @c_violet;
+        }
+    }
+    &__like {
+        background-image: url(../icons/like.png);
+        position: absolute;
+        z-index: 10;
+        right: 10;
+        top: 12px;
+        cursor: pointer;
+        height: 21px;
+        width: 23px;
+        &_liked {
+            background-image: url(../icons/liked.png);
+        }
+    }
+    &__content {
+        width: 100%;
+        height: 100%;
+        border: 1px solid @border;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        &:before {
+            content: url(../icons/tag.png);
+            position: absolute;
+            top: 0;
+            right: 19;
+            z-index: 5;
+        }
+        &:after {
+            content: "9,6";
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            top: 10;
+            right: 28;
+            z-index: 10;
+        }
+    }
+    &__row {
+        border-bottom: 1px solid @border;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        &_col {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &_nb {
+            border: none
+        }
+    }
+    &__star {
+        color: @line;
+        font-size: 12px;
+        cursor: pointer;
+        &_stared {
+            color: @c_blue;
+        }
+    }
+    &__feed-back {
+        color: @c_grey;
+        font-size: 12px;
+    }
+    &__subtext {
+        font-size: 12px;
+        color: @c_grey;
+        &_ping {
+            color: @c_ping
+        }
+        &_aqua {
+            color: @c_aqua
+        }
+        &_violet {
+            color: @c_violet;
+            & > span {
+                border-bottom: 1px solid @c_violet;
+            }
+            cursor: pointer;
+        }
+        &_striked {
+            color: @c_ping;
+            text-decoration: line-through;
+        }
+    }
+    &__info {
+        &_right {
+            text-align: right;
+        }
+    }
+}
+
 .footer-text {
     color: @c_shadow;
     font-size: 16px;
 }
-
-
