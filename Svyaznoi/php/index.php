@@ -76,7 +76,7 @@ function getSection($sections, $seat_number, $seats_count)
     }
 }
 
-// var_dump(getSectionNo($array2, 30));
+echo(getSectionNo($array2, 30) . "\n");
 
 // 2 задание - парс
 
