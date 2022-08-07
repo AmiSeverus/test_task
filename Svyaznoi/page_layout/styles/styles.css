@@ -53,10 +53,20 @@ body {
   padding: 0 130px;
   margin-bottom: 60px;
 }
+@media screen and (max-width: 320px) {
+  .container__main {
+    padding: 0 10px;
+  }
+}
 .container__title {
   margin-top: 23px;
   color: #333;
   font-size: 32px;
+}
+@media screen and (max-width: 320px) {
+  .container__title {
+    font-size: 24px;
+  }
 }
 .container__subtitle {
   font-size: 14px;
@@ -66,6 +76,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-flow: wrap;
 }
 .container__row_mb5 {
   margin-bottom: 5px;
@@ -93,6 +104,11 @@ body {
   justify-content: center;
   align-items: center;
   background-color: black;
+}
+@media screen and (max-width: 420px) {
+  .container__footer {
+    flex-direction: column;
+  }
 }
 .search {
   width: 100%;
@@ -163,6 +179,19 @@ body {
     display: block;
   }
 }
+@media screen and (max-width: 320px) {
+  .button_dis {
+    display: none;
+  }
+}
+.button_app {
+  display: none;
+}
+@media screen and (max-width: 320px) {
+  .button_app {
+    display: block;
+  }
+}
 .filter-option {
   background-color: #00CED0;
   padding: 6px;
@@ -190,6 +219,11 @@ body {
 .card__image {
   position: relative;
 }
+@media screen and (max-width: 320px) {
+  .card__image > img {
+    width: 100%;
+  }
+}
 .card__image:before {
   position: absolute;
   font-size: 14px;
@@ -208,6 +242,11 @@ body {
   content: "Рекомендуем";
   background-color: #4C1E87;
 }
+@media screen and (max-width: 320px) {
+  .card__image_dis {
+    display: none;
+  }
+}
 .card__like {
   background-image: url(../icons/like.png);
   position: absolute;
@@ -220,6 +259,29 @@ body {
 }
 .card__like_liked {
   background-image: url(../icons/liked.png);
+}
+.card__nophoto {
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  position: absolute;
+  z-index: 50;
+  top: 40;
+  left: 65;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__nophoto__img {
+  width: 26px;
+  height: 25px;
+  margin-right: 5px;
+}
+.card__nophoto__text {
+  margin-left: 5px;
+  font-size: 12px;
 }
 .card__content {
   width: 100%;
@@ -236,14 +298,32 @@ body {
   right: 19;
   z-index: 5;
 }
+@media screen and (max-width: 320px) {
+  .card__content:before {
+    right: 10px;
+    content: url(../icons/tag_small.png);
+  }
+}
 .card__content:after {
   content: "9,6";
   position: absolute;
   color: white;
   font-size: 20px;
-  top: 10;
+  top: 13;
   right: 28;
   z-index: 10;
+}
+@media screen and (max-width: 320px) {
+  .card__content:after {
+    font-size: 16px;
+    right: 17;
+    top: 9;
+  }
+}
+@media screen and (max-width: 320px) {
+  .card__content {
+    padding: 5px;
+  }
 }
 .card__row {
   border-bottom: 1px solid #D9D9D9;
@@ -257,6 +337,20 @@ body {
 }
 .card__row_nb {
   border: none;
+}
+@media screen and (max-width: 320px) {
+  .card__row {
+    border: none;
+    padding: 5px;
+  }
+}
+.card__row_app {
+  display: none;
+}
+@media screen and (max-width: 320px) {
+  .card__row_app {
+    display: flex;
+  }
 }
 .card__star {
   color: #E6E6E6;
@@ -294,7 +388,27 @@ body {
 .card__info_right {
   text-align: right;
 }
+@media screen and (max-width: 320px) {
+  .card__info_right {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 320px) {
+  .card__info_dis {
+    display: none;
+  }
+}
+@media screen and (max-width: 320px) {
+  .card__title {
+    font-size: 14px;
+  }
+}
 .footer-text {
   color: #EDEDED;
   font-size: 16px;
+}
+@media screen and (max-width: 320px) {
+  .footer-text {
+    font-size: 12px;
+  }
 }
