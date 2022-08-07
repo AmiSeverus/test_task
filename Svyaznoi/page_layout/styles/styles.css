@@ -398,6 +398,9 @@ body {
     display: none;
   }
 }
+.card__title {
+  padding-right: 44px;
+}
 @media screen and (max-width: 320px) {
   .card__title {
     font-size: 14px;
