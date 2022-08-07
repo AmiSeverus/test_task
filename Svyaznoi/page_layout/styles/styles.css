@@ -269,8 +269,8 @@ body {
   padding: 5px;
   position: absolute;
   z-index: 50;
-  top: 40;
-  left: 65;
+  left: 30%;
+  top: 30%;
   justify-content: space-between;
   align-items: center;
 }
@@ -330,6 +330,7 @@ body {
   padding: 10px 0;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .card__row_col {
   flex-direction: row;
@@ -404,6 +405,7 @@ body {
 @media screen and (max-width: 320px) {
   .card__title {
     font-size: 14px;
+    padding-right: 34px;
   }
 }
 .footer-text {
