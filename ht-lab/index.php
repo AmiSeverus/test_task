@@ -45,7 +45,7 @@ function ArrayChallenge(array $input=['hellocat', 'apple,bat,cat,goodbye,hello,y
 
     if (!$str)
     {
-        return 'короткая строка не задана'
+        return 'короткая строка не задана';
     }
 
     $cnt = strlen($str);
