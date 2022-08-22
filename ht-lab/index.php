@@ -18,7 +18,7 @@ function ArrayChallenge(array $input=['hellocat', 'apple,bat,cat,goodbye,hello,y
 
     if (!$arr)
     {
-        return 'строка не задана';
+        return 'длинная строка не задана';
     }
 
     $i = 0;
@@ -36,12 +36,17 @@ function ArrayChallenge(array $input=['hellocat', 'apple,bat,cat,goodbye,hello,y
 
     if (!$arr)
     {
-        return 'строка не содержит слов';
+        return 'длинная строка не содержит слов';
     }
 
     $arr = array_unique($arr);
 
-    $str = $input[0];
+    $str = trim($input[0]);
+
+    if (!$str)
+    {
+        return 'короткая строка не задана'
+    }
 
     $cnt = strlen($str);
 
