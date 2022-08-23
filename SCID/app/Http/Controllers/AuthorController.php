@@ -64,7 +64,47 @@ class AuthorController extends Controller
 
     public function update(Request $request)
     {
-        return 'update';
+        $validatedFields = $request->validate([
+            'id' => [
+                'required',
+                'exists:authors,id'
+            ],
+            'name' => [
+                'required',
+                'min:3'
+            ],
+            'surname' => [
+                'required'
+            ],
+            'patronic' => [
+                'sometimes'
+            ]
+        ]);
+
+        $not_unique_author = UniqueAuthorService::check($validatedFields);
+
+        if ($not_unique_author)
+        {
+            return $not_unique_author;
+        }
+
+        $author = Author::find($validatedFields['id']);
+
+        $author->name = $validatedFields['name'];
+        $author->surname = $validatedFields['surname'];
+        if(isset($validatedFields['patronic']))
+        {
+            $author->patronic = $validatedFields['patronic'];
+        } else {
+            $author->patronic = NULL;
+        }
+
+        $author->save();
+
+        return response()->json([
+            'message' => 'Автор изменен',
+            'author' => $author->toArray()
+        ], 200);
     }
 
     public function delete(Request $request)

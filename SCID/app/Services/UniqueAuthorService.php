@@ -21,6 +21,11 @@ class UniqueAuthorService
             $query->whereNull('patronic');
         }
 
+        if(isset($validatedFields['id']))
+        {
+            $query->where('id', '<>', $validatedFields['id']);
+        }
+
         if ($query->count() > 0)
         {
             return response()->json([
