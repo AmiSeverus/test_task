@@ -39,7 +39,7 @@ class Magazine extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'issued_at' => 'datetime',
+        'issued_at' => 'date:Y-m-d',
     ];
 
     /**
