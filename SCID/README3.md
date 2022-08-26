@@ -26,14 +26,14 @@
 
 API должен иметь в себе методы:
 
-POST /author/add
-POST /author/update
-POST /author/delete
-GET /author/list - здесь опционально клиент может передать параметры «page» - номер страницы и «perPage» - количество записей на страницу.
+* POST /author/add
+* POST /author/update
+* POST /author/delete
+* GET /author/list - здесь опционально клиент может передать параметры «page» - номер страницы и «perPage» - количество записей на страницу.
 
-POST /magazine/add
-POST /magazine/update
-POST /magazine/delete
-GET /magazine/list - по параметрам page,perPage по аналогии с описанным list выше.
+* POST /magazine/add
+* POST /magazine/update
+* POST /magazine/delete
+* GET /magazine/list - по параметрам page,perPage по аналогии с описанным list выше.
 
 В теле POST-запроса клиент должен передавать данные в виде JSON-строки, в ответ по всем методам также получат в теле ответа JSON-строку.
